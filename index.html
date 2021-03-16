@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="JS/Validacion.js"></script>
+    <title>Document</title>
+</head>
+<body onload="return ocultar();">
+    <form class="formulario"  onsubmit="return validar();">
+        <fieldset>
+        <legend>¿Que tipo de alojamiento tienes?</legend>
+           <div class="contenedor-campos">
+                <div class="entradas alojamiento">
+                    <label>¿Que tipo de prpiedad tienes?</label>
+                    <select class="Lista">
+                        <option value="Alojamiento entero">Propiedad entera</option>
+                        <option value="Alojamiento compartido">Propiedad compartida</option>
+                        <option value="Departamento entero">Departamento entero</option>
+                        <option value="Departamento compartido">Departamento compartido</option>   
+                    </select>
+                </div>
+                <div class="entradas ubicacion">
+                    <label>¿Cual es la ubicaccion de tu propiedad?</label>
+                    <input id="Ubicacion"placeholder="Mexico, Ciudad De México">
+                </div>
+                <div class="entradas dormitorios">
+                    <label>¿Cuantos dormitorios tiene la propiedad?</label>
+                    <select onchange="return validarDormitorio();"  id="Dormitorio"class="Lista">
+                        <option disabled selected="selected">0 Dormitorios</option>
+                        <option value="1">1 Dormitorio</option>
+                        <option value="2">2 Dormitorios</option>
+                        <option value="3">3 Dormitorios</option>
+                        <option value="4">4 Dormitorios</option>
+                        <option value="5">5 Dormitorios</option>
+                        <option value="-1">Mas Dormitorios</option>     
+                    </select>
+                    <input id="masDormitorio"placeholder="Ejemplo: 10">    
+                </div>
+                <div class="entradas banios">
+                    <label>¿Cuantos baños tiene la propiedad?</label>
+                    <select onchange="return validarBanio();" id="Banios"class="Lista">
+                        <option disabled selected="selected">0 Baños</option>
+                        <option value="1">1 Baño</option>
+                        <option value="2">2 Baños</option>
+                        <option value="3">3 Baños</option>
+                        <option value="4">4 Baños</option>
+                        <option value="5">5 Baños</option>
+                        <option value="-1">Mas Baños</option>     
+                    </select>
+                    <input id="masBanios"type="number" placeholder="eje: 10">    
+                </div>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>¿Dónde se encuentra tu Propiedad?</legend>
+            <div class="contenedor-campos2">
+                <div class="entradas estado">
+                    <label>Estado de la República</label>
+                    <select class="Lista" id="Estado"name="estado">
+                        <option disabled selected="selected">Seleccione uno...</option>
+                        <option value="Aguascalientes">Aguascalientes</option>
+                        <option value="Baja California">Baja California</option>
+                        <option value="Baja California Sur">Baja California Sur</option>
+                        <option value="Campeche">Campeche</option>
+                        <option value="Chiapas">Chiapas</option>
+                        <option value="Chihuahua">Chihuahua</option>
+                        <option value="CDMX">Ciudad de México</option>
+                        <option value="Coahuila">Coahuila</option>
+                        <option value="Colima">Colima</option>
+                        <option value="Durango">Durango</option>
+                        <option value="Estado de México">Estado de México</option>
+                        <option value="Guanajuato">Guanajuato</option>
+                        <option value="Guerrero">Guerrero</option>
+                        <option value="Hidalgo">Hidalgo</option>
+                        <option value="Jalisco">Jalisco</option>
+                        <option value="Michoacán">Michoacán</option>
+                        <option value="Morelos">Morelos</option>
+                        <option value="Nayarit">Nayarit</option>
+                        <option value="Nuevo León">Nuevo León</option>
+                        <option value="Oaxaca">Oaxaca</option>
+                        <option value="Puebla">Puebla</option>
+                        <option value="Querétaro">Querétaro</option>
+                        <option value="Quintana Roo">Quintana Roo</option>
+                        <option value="San Luis Potosí">San Luis Potosí</option>
+                        <option value="Sinaloa">Sinaloa</option>
+                        <option value="Sonora">Sonora</option>
+                        <option value="Tabasco">Tabasco</option>
+                        <option value="Tamaulipas">Tamaulipas</option>
+                        <option value="Tlaxcala">Tlaxcala</option>
+                        <option value="Veracruz">Veracruz</option>
+                        <option value="Yucatán">Yucatán</option>
+                        <option value="Zacatecas">Zacatecas</option>
+                    </select>
+                </div>
+                <div class="entradas direccion">
+                    <label>Dirección</label>
+                    <input id="Direccion"placeholder="eje: Av Bosques,52 ">
+                </div>
+                <div class="entradas apartamento">
+                    <label>Apartamento, piso, edificio (opcional)</label>
+                    <input placeholder="eje: 2º 5ª ">
+                </div>
+                <div class="entradas postal">
+                    <label>Código Postal</label>
+                    <input id="CodigoPostal"type="number" palaceholder="eje: 55243">
+                </div> 
+        </fieldset>
+        <div class="entradas">
+            <input class="boton" type="submit" value="Enviar">
+        </div>
+                
+    </form>
+</body>
+</html>
